@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="zh-hant">
+<head>
+	<title>創意農業行銷，實踐農村洄游</title>
+
+	<meta charset="UTF-8">
+	<meta name="description" content="web social application h1">
+	<meta name="keywords" content="HTML,CSS,XML,JavaScript">
+	<meta name="author" content="WenYuh">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<meta property="og:url"           content="http://cherry.cs.nccu.edu.tw/~s10230/hw1.html" />
+    <meta property="og:type"          content="website" />
+    <meta property="og:title"         content="農業" />
+    <meta property="og:description"   content="Your description" />
+    <meta property="og:image"         content="" />
+	
+	<script
+	src="https://code.jquery.com/jquery-3.1.1.min.js"
+	integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+	crossorigin="anonymous"></script>
+
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	
+
+	<link rel="stylesheet" type="text/css" href="hw/dist/bootstrap-social.css">
+	<link rel="stylesheet" type="text/css" href="hw/dist/semantic.min.css">
+	<script src="hw/dist/semantic.min.js"></script>
+	
+	<style>
+		#sidebar{
+			background-color: #000000;
+		}
+		.jumbotron{
+			height: 500px;
+			/*background-color: #000000*/
+			background-image: url("hw/pic3.jpg");
+			background-position: center;
+
+		}
+		.jumbotron h1{
+			font-size:36px;
+			color:#ffffff;
+			padding-top: 300px;
+		}
+		.jumbotron p{
+			color: #ffffff;
+			/*padding-top: 400px;*/
+		}
+		h1, h2 , p{
+			font-family: sans-serif, Arial, Helvetica;
+		}
+		p:hover{
+			background-color: yellow;
+		}
+		span{
+			font-size: 14px;
+			color:#696969;;
+		}
+		.ui.text.container{
+			max-width: 1000px!important;
+		}
+		#toTop {
+		    padding: 5px 3px;
+		    position: fixed;
+		    bottom: 0;
+		    right: 5px;
+		    display: none;
+		}
+	</style>
+</head>
+<body>
+
+
+
+
+<div class="ui sidebar inverted vertical menu" id="sidebar">
+
+	<div class="item">
+		<div class="title active">
+			<i class="fa fa-newspaper-o" aria-hidden="true"></i>&nbsp;&nbsp;農業萬象 <i class="dropdown icon"></i>
+			<div class="content menu active">
+				<a class="item">2017臺灣國際蘭展即將登場</a>
+				<a class="item">這家肉攤不一樣：黑豬王自產自銷，賣肉還配冷氣房</a>
+				<a class="item">以蟲剋蟲，米蟲卵變生物防治資材</a>
+			</div>
+		</div>
+	</div>
+	<div class="item">
+		<div class="title active">
+			<i class="fa fa-newspaper-o" aria-hidden="true"></i>&nbsp;&nbsp;食與育 <i class="dropdown icon"></i>
+			<div class="content menu active">
+				<a class="item">【廚房小情歌】晨光時刻，草莓蜜奶吐司</a>
+				<a class="item">農試所低鹽乳酸發酵技術，醃漬高麗菜更有效率</a>
+				<a class="item">【產地餐桌 部落廚房】鮮採山林美味的泰雅風味館</a>
+			</div>
+		</div>
+	</div>
+	<div class="item">
+		<div class="title active">
+			<i class="fa fa-newspaper-o" aria-hidden="true"></i>&nbsp;&nbsp;環境與人 <i class="dropdown icon"></i>
+			<div class="content menu active">
+				<a class="item">耐熱、收穫期短，台灣民間花椰菜育種受國際矚目</a>
+				<a class="item">水試所成功繁殖斐濟藍魔鬼，海洋更永續</a>
+				<a class="item">永續鰻魚資源，3月至10月禁止捕撈鰻苗</a>
+			</div>
+		</div>
+	</div>
+	<div class="item">
+		<div class="title active">
+			<i class="fa fa-newspaper-o" aria-hidden="true"></i>&nbsp;&nbsp;新農鳴 <i class="dropdown icon"></i>
+			<div class="content menu active">
+				<a class="item">【話有機】陳興宗：良食難求—給良食生產者的提醒與思考</a>
+				<a class="item">何美鄉：切忌用過去經驗研判禽流感，國內家禽屠宰與運輸須轉型</a>
+				<a class="item">【話有機】陳玠廷：PGS需思考如何與既有驗證機制互補，融入在地</a>
+			</div>
+		</div>
+	</div>
+	<div class="item">
+		<div class="title active">
+			<i class="fa fa-newspaper-o" aria-hidden="true"></i>&nbsp;&nbsp;影像 <i class="dropdown icon"></i>
+			<div class="content menu active">
+				<a class="item">【影像】年節「吃貨」必讀的漁業小故事</a>
+				<a class="item">【鳥事繼續生煙】大家一起來避孕</a>
+				<a class="item">【攝影集】《無盡藏  哈崙百年林業影像集》</a>
+			</div>
+		</div>
+	</div>
+ </div>
+
+
+<div class="pusher">
+
+	<div class="ui attached stackable menu">
+	  <div class="ui container">
+	    <a class="item toggle button">
+	      <i class="grid layout icon"></i> Browse
+	    </a>
+	    <a class="item" id="plustext">
+	      <span class="glyphicon glyphicon-zoom-in" ></span> Zoom-in 
+	    </a>
+	    <a class="item" id="minustext">
+	      <span class="glyphicon glyphicon-zoom-out" ></span>  Zoom-out
+	    </a>
+	    <div class="ui simple dropdown item">
+	      More
+	      <i class="dropdown icon"></i>
+	      <div class="menu">
+	        <a class="item"><i class="edit icon"></i> Edit Profile</a>
+	        <a class="item"><i class="globe icon"></i> Choose Language</a>
+	        <a class="item"><i class="settings icon"></i> Account Settings</a>
+	      </div>
+	    </div>
+	    <div class="right item">
+	      <div class="ui input"><input type="text" placeholder="Search..."></div>
+	    </div>
+	  </div>
+	</div>
+
+	<div class="container">
+		<div class="jumbotron" id="jumbotron">
+		<h1>創意農業行銷，實踐農村洄游</h1>
+		<p>2017 年 02 月 03 日</p>
+	</div>
+	</div>
+	
+ 
+
+	<div class="ui raised very padded text container segment">
+	  <h2 class="ui header">【105年優秀農業人員】吳菁菁 創意農業行銷，實踐農村洄游</h2>
+	  <p><strong>文、圖片提供／ 豐年社</strong></p>
+	  <p><strong>文／丁宛臻 · 攝影／許鈺屏，相關報導請詳見<a href="http://www.pcstore.com.tw/store1471832541/M28949855.htm">《豐年雜誌》2017年01 · 02月號</a></strong></p>
+	  <p>
+	  	自信大方的談吐、活潑爽朗的笑容，舞臺上的她光鮮亮麗，用主持魅力散發「亮菁菁」的光芒；步下舞臺，換回輕便服裝，吳菁菁繼續用滿滿活力面對挑戰。投入公職多年的她，一路走來嘗試多元領域，不變的卻是一顆勇於挑戰的心。
+	  </p>
+	  <p>
+	  	從農家記帳研究、口蹄疫風暴新聞處理、打開米禮盒市場，到大力推動的「大專生洄游農村系列計畫」，吳菁菁始終秉持「以人為本」的精神，期盼看見問題、解決問題，透過實踐找回人與土地的情感。
+	  </p>
+	  <p>
+		無論是莊重的頒獎典禮或熱鬧的活動現場，時常能在臺上看見那活力充沛的身影──吳菁菁。堪稱農委會主持界第一把交椅的她，常被誤認為出身傳播科系，但其實她畢業於臺灣大學農業經濟系，畢業後即投入公職，轉眼間就是20多個寒暑。
+	  </p>
+	  <p>
+	  	民國81年，吳菁菁進入農林廳農業經濟科工作，承辦農家記帳領域業務，在看似枯燥的研究工作中，竟意外探索出另一片天空，「跟農家訪談過程中，我發現，原來我對於『與人接觸』滿有興趣的。」
+	  </p>
+	  <p>
+	  	爾後，吳菁菁轉換跑道，在民國86年進入農林廳秘書室新聞股。然而，時逢臺灣第一次爆發口蹄疫風暴，逼得初來乍到的吳菁菁不得不在最短時間內學會寫新聞稿、處理輿情、和媒體應對，日夜無休。「有人說，要是當初我沒有轉換跑道就不會那麼辛苦。但我覺得，失去就是一種獲得，困難就是一種機會。」化挑戰為成長，吳菁菁的正向態度也為往後職涯奠定良好基礎。
+	  </p>
+	  <h4><strong>逆境即轉機　把握機會力求表現</strong></h4>
+	  <p>
+	  	歷經精省、改制，農糧署在93年成立，吳菁菁也在公關科堅守崗位，不僅想方設法地幫農委會各單位行銷成果，更擔綱無數典禮主持，活潑的風格也備受好評。然而，一帆風順的主持生涯卻意外掀起波瀾。有次，吳菁菁前往主持的路上接到某位長官來電，通知她再也不用擔任典禮主持了，讓她當場失落大哭。
+	  </p>
+	  <p>
+	  	「我開始反省，是不是自己的內容及風格失去了分寸？」歷經好一段時間的沉澱，吳菁菁重新出發。即使被摘下金牌司儀的光環，她仍不氣餒，為自己找到另一個出口，甚至報名臺北市的國語文競賽社會組演說比賽，並獲得第二名，「就算遇到挫折也絕對不能停下腳步，只有一直往前邁進，機會才會找上門！」
+	  </p>
+	  <p>
+	  	除了等待機會上門，吳菁菁也勇於主動出擊。民國97年，農委會大力推廣經典好米，還推出小包裝設計，然而市場接受度不高，屢屢宣傳仍不見起色。恰巧，當時吳菁菁輾轉得知鴻海集團董事長郭台銘即將文定，便鼓起勇氣推薦以臺灣本土米禮盒為伴手禮。「那時候真的是機密，所有往來、信件、樣本都要偷偷來，一旦曝光就沒指望了。」雖非業務範圍，她仍花費許多工夫，為的就是提升臺灣好米知名度。而郭台銘夫婦的採用，無疑是為最好的廣告，也成功打開米禮盒市場。
+	  </p>
+	  <h4><strong>致力農村再生 引動青年洄游力量</strong></h4>
+	  <p>
+	  	吳菁菁期盼專注在農民教育輔導及農村社區事務，於民國98年毅然決然離開待了十多年的農糧署，先後在水土保持局的農村建設組及綜合企劃組任職，推動農村再生工作。「最大的問題是，農村的未來性沒有被看見，所以年輕人不願意踏入。即使想踏入，也缺乏管道。」為了在青年與農村間搭起橋樑，「大專生洄游農村系列計畫」應運而生。
+	  </p>
+	  <p>
+	  	為將年輕活水注入農村，自民國100年辦理第一屆「大專生洄游農村系列計畫」起，吳菁菁每年都帶領同仁至少走訪3、40間大專院校舉辦說明會，「要走在第一線與人接觸，實地了解師生需求，讓大家知道公部門是真的有心要做。」
+	  </p>
+	  <p>
+	  	運用社區資源，這些「洄游青年」幫農村挖掘出獨一無二的在地特色，並設計文創商品、美化環境，引起大眾關注。吳菁菁驕傲地說：「去年有一組駐村在臺中仁里社區的『梨里人』，就是用當地盛產的高接梨，農民不要的梨梗改造為獨一無二的『梨梗筆』，那個訂單接都接不完喔！」看見青年揮灑創意，激發更多力量投入農村改造，吳菁菁心中滿是欣慰。
+	  </p>
+
+	  <img class="ui fluid image" src="hw/pic1.jpg" alt="pic1">
+	  <span>一手規劃、推動「大專生洄游農村競賽」的吳菁菁，是每年「洄游之夜」成果發表會主持人的不二人選。</span>
+
+	  <h4><strong>既是付出更是成長 感動力洄游四方</strong></h4>
+	  <p>
+	  	吳菁菁提到，學生除了營造農村之外，也關注居民需求。無論是協助採收作物、與當地孩子相處，或是走訪田野尋找在地故事，都讓她感受到農村、居民和學生三方滿滿的成長。「居民們到最後都把他們當自己家人一樣啊，要走的時候大家都哭得淅瀝嘩啦，那個真的是騙不了人的感情。」她回憶。
+	  </p>
+	  <p>
+	  	吳菁菁回想，曾經有位學生原本不愛讀書，還時常蹺課鬧事，但因為參加「大專生洄游農村系列計畫」而發現自己的優點，也決心改變農村困境。他不僅考上國立大學研究所，更以農村發展作為畢業之後的工作。「這樣的案例不在少數，大約有二到三成的『洄游青年』畢業後選擇從事農業、觀光、文創產業，這種長期的『洄游』正是我們期待的。」她說。
+	  </p>
+	  <p>
+	  	她也提到，還有位學生原本和父親關係不好，但參與洄游計畫時，某次颱風天他和同學們一起協助農民搶收作物，剛好被新聞台拍下。「本來父子兩人都不說話，但當他拿上新聞的影片給在住院的爸爸看，爸爸就轉過身哭了，因為他發現孩子真的長大了，知道以前感受不到的情感回來了。」
+	  </p>
+	  <p>
+	  	吳菁菁認為，這個計畫不只帶起青年和農村的連結，更找回人跟人之間無私的感情，也讓這份溫暖重新「洄游」到家庭與社會。因此，「大專生洄游農村系列計畫」所強調的在地實踐、在地觀察、解決問題、創造就業，在104年獲得美國華頓商學院舉辦的「全球教育創新獎」亞洲區銅牌的肯定。
+	  </p>
+	  <h4><strong>勇於挑戰自我 掌握世界脈動</strong></h4>
+	  <p>
+	  	回首20多年的公職生涯，吳菁菁不曾停下腳步，而是把握每分每秒充實自己。她十分感謝一路上給予她機會的長官，以及並肩作戰的同事們，「我真的很幸運，這條路上充滿貴人和機會，讓我可以勇敢踏出舒適圈。」
+	  </p>
+	  <p>
+	  	現任行政院參議的吳菁菁，期盼未來能在行政院學習政策的研擬與執行，並提升國際視野，「國際觀是必備的，需要走出去發現世界脈動，也讓世界看見台灣。」她也期許自己未來能夠邁開步伐，看到不一樣的視野，同時思考如何將農業與其他領域的資源結合。正如吳菁菁所說：「用心做好每一件事，因為每一件事都是大事！」
+	  </p>
+
+	  <img class="ui fluid image" src="hw/pic2.JPG" alt="../pic2">
+	  <span >吳菁菁(左1)期盼年輕一輩能與農業接軌，不僅達到翻轉教育的效果，更同時提升農村競爭力。</span>
+
+	  <h2>大專生洄游農村系列計畫</h2>
+	  <p>
+	  	「大專生洄游農村競賽」為行政院農委會水保局主辦之計畫，以全國大專院校教師及學生為主體，透過組隊報名參加，並選擇一個農村社區，提出協助農村公共事務的「駐村計畫書」，闡述如何在駐村期間運用專長及創意落實計畫構想，促進農村社區發展。
+	  </p>
+	  <p>
+	  	「大專生洄游農村系列計畫」由「農Stay」、「農村競賽」及「農村二次方行動計畫」集合而成。「農Stay」以共識營帶領青年進入農村，模擬初入社區可能面臨的困難，並提供解決方式與資源；「農村競賽」則由學生實地進駐社區，每年固定舉辦「洄游之夜」，呈現靜態作品與動態成果展；「農村二次方行動計畫」則提供資源，鼓勵以往參加過洄游計畫的學子，以更成熟且創新的做法回饋農村。
+	  </p>
+
+		<div class="ui divider"></div>
+		<img class="ui middle aligned tiny image" src="hw/pic4.jpg" alt="pic4">
+		<h4><a href="http://www.agriharvest.tw/index.php?context_error">豐年社</a></h4>
+		<p>豐年社成立於民國 40 年，以發行及銷售有關農業書刊、產品及資材，服務農民、提高農家所得、改善農家生活為目的。豐年社目前之五大服務為：
+		</p>
+		<ol>
+			<li>出版「豐年」月刊—農業產銷技術權威刊物</li>
+			<li>出版「鄉間小路」月刊—報導鄉土之美，食品營養，衛生保健，家庭園藝，農產品消費知識</li>
+			<li>出版豐年叢書—由專家學者執筆，出版農林漁牧園藝及保健等各種豐年叢書40餘種</li>
+			<li>經銷農業書刊—供銷豐年叢書，代售國內外農林漁牧園藝及保健書籍2000多種</li>
+			<li>代辦業務—接受各機關委託，提供編輯、印刷、發行及相關活動之代辦服務。</li>
+		</ol>
+
+
+		<div class="ui divider"></div>
+
+			<h2>回應</h2>
+			<div class="ui form">
+
+		  	  <div class="field">
+			    <label>Name</label>
+			    <input type="text" placeholder="Name" id="name">
+			  </div>
+			  <div class="field">
+			    <label>Comment</label>
+			    <textarea rows="2"  id="comment"></textarea>
+			  </div>
+			  <button id="add" type="button" class="btn btn-default"><i class="fa fa-plus" aria-hidden="true"></i> 新增</button>
+			</div>
+
+			<div class="ui divider"></div>
+				<table class="table table-striped">
+					<thead>
+						<tr>
+							<th>name</th>
+							<th>comment</th>
+						</tr>
+					</thead>
+					<tbody>
+						
+					</tbody>
+				</table>
+
+			<div class="ui divider"></div>
+
+			<div id="fb-root"></div>
+			<script>(function(d, s, id) {
+			  var js, fjs = d.getElementsByTagName(s)[0];
+			  if (d.getElementById(id)) return;
+			  js = d.createElement(s); js.id = id;
+			  js.src = "//connect.facebook.net/zh_TW/sdk.js#xfbml=1&version=v2.8&appId=236105966830182";
+			  fjs.parentNode.insertBefore(js, fjs);
+			}(document, 'script', 'facebook-jssdk'));</script>
+
+
+			<div class="fb-share-button" data-href="http://cherry.cs.nccu.edu.tw/~s10230/hw2.html" data-layout="button_count" data-size="large" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fcherry.cs.nccu.edu.tw%2F%7Es10230%2Fhw1.html&amp;src=sdkpreparse">分享</a></div>
+
+		
+<div id='toTop'>
+	<button class="ui button">Go to Top</button>
+</div>
+
+	</div>
+
+</div>
+
+<script>
+
+$('.ui.sidebar').first()
+  .sidebar('attach events', '.toggle.button');
+$('.toggle.button')
+  .removeClass('disabled');
+
+$( document ).ready(function() {
+	$("#add").click(function(){
+		getvalue();
+	});
+
+});
+function getvalue(){
+	var name = document.getElementById("name").value;
+	var comment = document.getElementById("comment").value;
+	console.log(name)
+	$("tbody").append("<tr><td>"+ name +"</td><td>"+comment+"</tr>");
+}
+
+
+$(window).scroll(function() {
+    if ($(this).scrollTop()>2000) {
+        $('#toTop').fadeIn();
+    } else {
+        $('#toTop').fadeOut();
+    }
+});
+
+$('#toTop').each(function(){
+    $(this).click(function(){
+        $('html,body').animate({ scrollTop: 0 }, 'slow');
+        return false;
+    });
+});
+
+
+$('#plustext').each(function(){
+    $(this).click(function(){
+        var size = $("p").css('font-size');
+        console.log(size)
+        size= parseInt(size)+2;
+	    $('p').css("font-size", size + "px");
+    });
+});
+
+$('#minustext').each(function(){
+    $(this).click(function(){
+    	var size = $("p").css('font-size');
+        console.log(size)
+        size= parseInt(size)-2;
+	    $('p').css("font-size", size + "px");
+    });
+});
+
+
+
+
+
+
+
+
+
+</script>
+
+</body>
+</html>
